@@ -28,7 +28,7 @@ class GistService {
     func getAllGists(completion: @escaping (Result<[Gist]>) -> ()) {
         let storedGists = repository.getAll()
         completion(.success(storedGists))
-        
+
         Alamofire
             .request("\(baseUrl)/gists")
             .responseData { [weak self] response in
