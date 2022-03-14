@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class File: Object, Codable {
-    var name: String = ""
-    var type: String = ""
-    var language: String?
-    var rawUrl: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var type: String = ""
+    @objc dynamic var language: String?
+    @objc dynamic var rawUrl: String = ""
 
     enum CodingKeys: String, CodingKey {
         case name = "filename"
