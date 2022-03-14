@@ -15,7 +15,7 @@ class GistRepository {
 
     func store(_ gists: [Gist]) {
         try! realm.write {
-            realm.add(gists, update: true)
+            realm.add(gists, update: .all)
         }
     }
 
