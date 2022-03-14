@@ -29,15 +29,17 @@ class GistService {
         let storedGists = repository.getAll()
         completion(.success(storedGists))
 
-        Alamofire
-            .request("\(baseUrl)/gists")
-            .responseData { [weak self] response in
-                
+        AF.request("\(baseUrl)/gists").response { [weak self] response in
                 guard let `self` = self else { return }
                 
                 switch response.result {
                 case .success(let data):
                     do {
+                        guard let data = data else {
+                            completion(.success(storedGists))
+                            return
+                        }
+
                         let gists = try self.jsonDecoder.decode([Gist].self, from: data)
                         self.repository.deleteAll()
                         self.repository.store(gists)
