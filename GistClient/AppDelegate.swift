@@ -42,12 +42,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupNavigationBarAppearance() {
-        UIApplication.shared.statusBarStyle = .lightContent
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.navTitleColor]
+
         UINavigationBar.appearance().prefersLargeTitles = false
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = UIColor.Theme.navBarColor
         UINavigationBar.appearance().tintColor = UIColor.Theme.navTitleColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.navTitleColor]
+        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
+
+        if #available(iOS 15.0, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.backgroundColor = UIColor.Theme.navBarColor
+            navigationBarAppearance.titleTextAttributes = titleTextAttributes
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        }
     }
 
 }
