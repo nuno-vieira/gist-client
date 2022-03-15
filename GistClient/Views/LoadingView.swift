@@ -19,11 +19,16 @@ class LoadingView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        translatesAutoresizingMaskIntoConstraints = false
+
         backgroundColor = UIColor.Theme.contentBackgroundColor
         addSubview(activityIndicatorView)
-        activityIndicatorView.snp.makeConstraints { (make) in
-            make.center.equalTo(self)
-        }
+
+        NSLayoutConstraint.activate([
+            activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {

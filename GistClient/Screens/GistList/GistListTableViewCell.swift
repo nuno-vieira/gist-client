@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import Kingfisher
 
 class GistListTableViewCell: UITableViewCell {
@@ -24,7 +23,7 @@ class GistListTableViewCell: UITableViewCell {
                 createdDateLabel.text = "\(dateFormatter.string(from: date))"
             }
             
-            commentsLabel.text = "\(String(gist.numberOfComments)) comments"
+            commentsLabel.text = "\(String(gist.numberOfComments)) 💬"
             fileNameLabel.text = gist.filename + ""
         }
     }
@@ -33,7 +32,7 @@ class GistListTableViewCell: UITableViewCell {
     let imageSize = CGSize(width: 28, height: 28)
 
     lazy var ownerImageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: imageSize))
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 4
         imageView.clipsToBounds = true
@@ -61,7 +60,7 @@ class GistListTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = .Theme.boldText
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         return label
     }()
     
@@ -87,6 +86,7 @@ class GistListTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
         selectionStyle = .none
         backgroundColor = UIColor.Theme.contentBackgroundColor
         
@@ -95,35 +95,35 @@ class GistListTableViewCell: UITableViewCell {
         addSubview(createdDateLabel)
         addSubview(fileNameLabel)
         addSubview(commentsLabel)
-        
-        ownerImageView.snp.makeConstraints { (make) in
-            make.size.equalTo(imageSize.width)
-            make.left.equalTo(self.layoutMargins.left).offset(10)
-            make.top.equalTo(self.layoutMargins.top)
-        }
-        
-        ownerNameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(ownerImageView.snp.top).offset(-1)
-            make.left.equalTo(ownerImageView.snp.right).offset(12)
-        }
-        
-        createdDateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(ownerNameLabel.snp.bottom).offset(2)
-            make.left.equalTo(ownerNameLabel.snp.left)
-        }
-        
-        fileNameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(ownerNameLabel.snp.left)
-            make.top.equalTo(createdDateLabel.snp.bottom).offset(7)
-            make.bottom.lessThanOrEqualTo(layoutMargins.bottom).offset(-6)
-        }
-        
-        commentsLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self).offset(20)
-            make.right.equalTo(layoutMargins.right).offset(-10)
-            make.left.greaterThanOrEqualTo(fileNameLabel.snp.right).offset(2)
-            make.width.greaterThanOrEqualTo(80)
-        }
-    }
 
+        NSLayoutConstraint.activate([
+            ownerImageView.widthAnchor.constraint(equalToConstant: imageSize.width),
+            ownerImageView.heightAnchor.constraint(equalToConstant: imageSize.height),
+            ownerImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            ownerImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            ownerNameLabel.topAnchor.constraint(equalTo: ownerImageView.topAnchor),
+            ownerNameLabel.leadingAnchor.constraint(equalTo: ownerImageView.trailingAnchor, constant: 12)
+        ])
+
+        NSLayoutConstraint.activate([
+            createdDateLabel.topAnchor.constraint(equalTo: ownerNameLabel.bottomAnchor, constant: 2),
+            createdDateLabel.leadingAnchor.constraint(equalTo: ownerNameLabel.leadingAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            fileNameLabel.leadingAnchor.constraint(equalTo: ownerNameLabel.leadingAnchor),
+            fileNameLabel.topAnchor.constraint(equalTo: createdDateLabel.bottomAnchor, constant: 8),
+            fileNameLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            commentsLabel.bottomAnchor.constraint(equalTo: fileNameLabel.bottomAnchor),
+            commentsLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: 8),
+            commentsLabel.leadingAnchor.constraint(equalTo: fileNameLabel.trailingAnchor, constant: 16),
+            commentsLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 40)
+        ])
+    }
 }

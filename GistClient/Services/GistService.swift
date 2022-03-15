@@ -27,7 +27,9 @@ class GistService {
 
     func getAllGists(completion: @escaping (Result<[Gist]>) -> ()) {
         let storedGists = repository.getAll()
-        completion(.success(storedGists))
+        if !storedGists.isEmpty {
+            completion(.success(storedGists))
+        }
 
         AF.request("\(baseUrl)/gists").response { [weak self] response in
                 guard let `self` = self else { return }
