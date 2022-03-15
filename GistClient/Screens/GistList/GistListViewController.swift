@@ -9,10 +9,6 @@
 import UIKit
 
 class GistListViewController: UIViewController {
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     let gistListView = GistListView(frame: .zero)
     let dataSource = GistListTableViewDataSource()

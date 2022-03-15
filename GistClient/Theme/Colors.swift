@@ -10,10 +10,30 @@ import UIKit
 
 extension UIColor {
     struct Theme {
-        static let navTitleColor = UIColor.white
-        static let navBarColor = UIColor(hex: 0x24292d)
-        static let contentBackgroundColor = UIColor(hex: 0xf6f8fa)
+        static let navTitleColor = UIColor.label
         static let borderColor = UIColor(hex: 0xd1d5da)
         static let errorColor = UIColor(hex: 0xcb2431)
+        static let textColor = UIColor(hex: 0x768390)
+        static let boldText = UIColor.label
+        static let navBarColor = UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+                case .light:
+                    return UIColor(hex: 0xf8f8fa)
+                case .dark:
+                    return UIColor(hex: 0x2d333b)
+                default:
+                    return UIColor(hex: 0xf8f8fa)
+            }
+        }
+        static let contentBackgroundColor = UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+                case .light:
+                    return UIColor(hex: 0xf6f8fa)
+                case .dark:
+                    return UIColor(hex: 0x22272e)
+                default:
+                    return UIColor(hex: 0xf6f8fa)
+            }
+        }
     }
 }

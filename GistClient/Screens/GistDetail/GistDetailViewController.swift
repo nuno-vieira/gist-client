@@ -10,11 +10,6 @@ import UIKit
 import WebKit
 
 class GistDetailViewController: UIViewController, WKNavigationDelegate {
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     var webView: WKWebView!
     var loadingView: LoadingView = LoadingView(frame: .zero)
     
