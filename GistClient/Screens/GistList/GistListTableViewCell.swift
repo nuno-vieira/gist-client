@@ -44,7 +44,7 @@ class GistListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = UIColor.gray
+        label.textColor = .Theme.textColor
         return label
     }()
 
@@ -52,7 +52,7 @@ class GistListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 11)
-        label.textColor = UIColor.gray
+        label.textColor = .Theme.textColor
         return label
     }()
 
@@ -60,6 +60,7 @@ class GistListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = .Theme.boldText
         label.numberOfLines = 1
         return label
     }()
@@ -68,6 +69,7 @@ class GistListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .Theme.textColor
         label.numberOfLines = 1
         label.textAlignment = .right
         return label
@@ -93,7 +95,6 @@ class GistListTableViewCell: UITableViewCell {
         addSubview(createdDateLabel)
         addSubview(fileNameLabel)
         addSubview(commentsLabel)
-
         
         ownerImageView.snp.makeConstraints { (make) in
             make.size.equalTo(imageSize.width)
@@ -123,7 +124,6 @@ class GistListTableViewCell: UITableViewCell {
             make.left.greaterThanOrEqualTo(fileNameLabel.snp.right).offset(2)
             make.width.greaterThanOrEqualTo(80)
         }
-        
     }
 
 }
