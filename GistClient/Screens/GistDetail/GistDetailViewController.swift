@@ -38,9 +38,13 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
         title = gist.filename
 
         view.addSubview(loadingView)
-        loadingView.snp.makeConstraints { (make) in
-            make.center.equalTo(self.view)
-        }
+
+        NSLayoutConstraint.activate([
+            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingView.topAnchor.constraint(equalTo: view.topAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
 
         guard let url = URL(string: gist.url) else { return }
         let request = URLRequest(url: url)
@@ -48,10 +52,16 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("document.querySelector('header').remove()", completionHandler: nil)
-        DispatchQueue.main.async {
-            self.loadingView.isHidden = true
-        }
+        webView.evaluateJavaScript("""
+            document.querySelector('.js-header-wrapper').remove();
+            document.querySelector('.gist-detail-intro').remove();
+        """, completionHandler: { _, _ in
+            // The delay is to make sure the js has finished evaluate.
+            // This is to avoid a minor flicker in the UI.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.loadingView.isHidden = true
+            }
+        })
     }
 
 }

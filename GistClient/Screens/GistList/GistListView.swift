@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import SnapKit
 
 class GistListView: UIView {
     
     lazy var notificationMessageView: NotificationMessageView = {
         let view = NotificationMessageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
     }()
@@ -24,61 +24,60 @@ class GistListView: UIView {
         view.backgroundColor = UIColor.Theme.contentBackgroundColor
         return view
     }()
-    
-    var topConstraint: Constraint? = nil
+
+    lazy var loadingView = LoadingView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        tableView.register(GistListTableViewCell.self, forCellReuseIdentifier: String(describing: GistListTableViewCell.self))
+
+        tableView.register(
+            GistListTableViewCell.self,
+            forCellReuseIdentifier: String(describing: GistListTableViewCell.self)
+        )
        
         addSubview(tableView)
         addSubview(notificationMessageView)
-        
-        notificationMessageView.snp.makeConstraints { (make) in
-            self.topConstraint = make.top.equalTo(self).offset(-35).constraint
-            make.height.equalTo(35)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(tableView.snp.top)
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
-        }
+        addSubview(loadingView)
+
+        NSLayoutConstraint.activate([
+            notificationMessageView.heightAnchor.constraint(equalToConstant: 35),
+            notificationMessageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            notificationMessageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            notificationMessageView.topAnchor.constraint(equalTo: tableView.topAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override class var requiresConstraintBasedLayout: Bool {
-        return true
-    }
-
     func showLoading() {
-        tableView.backgroundView = LoadingView(frame: .zero)
+        loadingView.isHidden = false
+        notificationMessageView.isHidden = true
     }
 
     func hideLoading() {
-        tableView.backgroundView = nil
+        loadingView.isHidden = true
+        notificationMessageView.isHidden = true
     }
 
     func showError(message: String) {
-        self.notificationMessageView.isHidden = false
+        loadingView.isHidden = true
+        notificationMessageView.isHidden = false
         notificationMessageView.messageLabel.text = message
-        tableView.backgroundView = nil
-        UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseOut, animations: {
-            self.topConstraint?.update(offset: 0)
-            self.layoutIfNeeded()
-        }, completion: nil)
-        
-        UIView.animate(withDuration: 0.3, delay: 4, options: .curveEaseIn, animations: {
-            self.topConstraint?.update(offset: -35)
-            self.layoutIfNeeded()
-        }, completion: {
-            _ in self.notificationMessageView.isHidden = true
-        })
     }
 }

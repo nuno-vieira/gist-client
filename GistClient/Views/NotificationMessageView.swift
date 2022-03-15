@@ -41,11 +41,16 @@ class NotificationMessageView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
         backgroundColor = UIColor.Theme.errorColor
         addSubview(messageLabel)
-        messageLabel.snp.makeConstraints { (make) in
-            make.center.equalTo(self)
-        }
+
+        NSLayoutConstraint.activate([
+            messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
