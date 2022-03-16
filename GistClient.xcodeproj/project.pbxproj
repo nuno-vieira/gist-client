@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */; };
 		23249CD1219CE1950088DBA7 /* GistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CD0219CE1950088DBA7 /* GistService.swift */; };
-		23249CD5219CE3B70088DBA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CD4219CE3B70088DBA7 /* Result.swift */; };
 		23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CDC219CEBBA0088DBA7 /* Gist.swift */; };
 		23249CE1219CF9BB0088DBA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CE0219CF9BB0088DBA7 /* User.swift */; };
 		2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
 		23249CD0219CE1950088DBA7 /* GistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistService.swift; sourceTree = "<group>"; };
-		23249CD4219CE3B70088DBA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		23249CDC219CEBBA0088DBA7 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		23249CE0219CF9BB0088DBA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessageView.swift; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 		23249CD6219CE3C10088DBA7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				23249CD4219CE3B70088DBA7 /* Result.swift */,
 				2362A41521A3735200B6C383 /* Navigator.swift */,
 			);
 			path = Common;
@@ -183,13 +180,13 @@
 		23ADDE03219B89E90012635A /* GistClient */ = {
 			isa = PBXGroup;
 			children = (
-				23249CE2219D085B0088DBA7 /* Theme */,
 				23249CDB219CE5630088DBA7 /* Extensions */,
+				23249CD6219CE3C10088DBA7 /* Common */,
+				23249CE2219D085B0088DBA7 /* Theme */,
 				23249CDA219CE5550088DBA7 /* Models */,
 				23249CD9219CE3E60088DBA7 /* Database */,
 				23249CD8219CE3D90088DBA7 /* Services */,
 				23249CD7219CE3CD0088DBA7 /* Screens */,
-				23249CD6219CE3C10088DBA7 /* Common */,
 				2362A41B21A3816300B6C383 /* Views */,
 				23ADDE04219B89E90012635A /* AppDelegate.swift */,
 				23ADDE0D219B89F20012635A /* LaunchScreen.storyboard */,
@@ -279,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				238AA13921A61ECA00F55D84 /* GistRepository.swift in Sources */,
-				23249CD5219CE3B70088DBA7 /* Result.swift in Sources */,
 				2362A41A21A375D900B6C383 /* GistListTableViewDelegate.swift in Sources */,
 				23249CD1219CE1950088DBA7 /* GistService.swift in Sources */,
 				23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */,
