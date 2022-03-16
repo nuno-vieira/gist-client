@@ -18,7 +18,7 @@
 		2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41721A3737300B6C383 /* GistListNavigator.swift */; };
 		2362A41A21A375D900B6C383 /* GistListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41921A375D900B6C383 /* GistListTableViewDelegate.swift */; };
 		2362A41F21A381AD00B6C383 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41E21A381AD00B6C383 /* LoadingView.swift */; };
-		2362A42121A393BB00B6C383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42021A393BB00B6C383 /* UIColor.swift */; };
+		2362A42121A393BB00B6C383 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42021A393BB00B6C383 /* UIColor+hex.swift */; };
 		2362A42321A3943600B6C383 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42221A3943600B6C383 /* Colors.swift */; };
 		238AA13921A61ECA00F55D84 /* GistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238AA13821A61ECA00F55D84 /* GistRepository.swift */; };
 		23ADDE05219B89E90012635A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ADDE04219B89E90012635A /* AppDelegate.swift */; };
@@ -30,6 +30,7 @@
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F6C27E001EF00B5CB3A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6B27E001EF00B5CB3A /* Alamofire */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
+		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,7 @@
 		2362A41721A3737300B6C383 /* GistListNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListNavigator.swift; sourceTree = "<group>"; };
 		2362A41921A375D900B6C383 /* GistListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewDelegate.swift; sourceTree = "<group>"; };
 		2362A41E21A381AD00B6C383 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		2362A42021A393BB00B6C383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2362A42021A393BB00B6C383 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		2362A42221A3943600B6C383 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		238AA13821A61ECA00F55D84 /* GistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRepository.swift; sourceTree = "<group>"; };
 		23ADDE01219B89E90012635A /* GistClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +56,7 @@
 		23B3D30E219E31B100A37367 /* GistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListView.swift; sourceTree = "<group>"; };
 		23B3D310219E3B1A00A37367 /* GistListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewDataSource.swift; sourceTree = "<group>"; };
 		23D5C065219F51D300574650 /* GistListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewCell.swift; sourceTree = "<group>"; };
+		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 		23249CDB219CE5630088DBA7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2362A42021A393BB00B6C383 /* UIColor.swift */,
+				2362A42021A393BB00B6C383 /* UIColor+hex.swift */,
+				ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,8 +284,9 @@
 				23249CD1219CE1950088DBA7 /* GistService.swift in Sources */,
 				23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */,
 				2362A41F21A381AD00B6C383 /* LoadingView.swift in Sources */,
-				2362A42121A393BB00B6C383 /* UIColor.swift in Sources */,
+				2362A42121A393BB00B6C383 /* UIColor+hex.swift in Sources */,
 				2362A42321A3943600B6C383 /* Colors.swift in Sources */,
+				ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */,
 				2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */,
 				23D5C066219F51D300574650 /* GistListTableViewCell.swift in Sources */,
 				23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */,

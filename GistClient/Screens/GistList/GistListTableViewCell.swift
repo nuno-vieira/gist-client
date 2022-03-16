@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class GistListTableViewCell: UITableViewCell {
     
@@ -16,7 +15,7 @@ class GistListTableViewCell: UITableViewCell {
             guard let gist = self.gist else { return }
             
             if let owner = gist.owner {
-                ownerImageView.kf.setImage(with: URL(string: owner.avatarUrl))
+                ownerImageView.loadImage(url: URL(string: owner.avatarUrl))
                 ownerNameLabel.text = owner.name
             }
             if let date = gist.createdAt {
