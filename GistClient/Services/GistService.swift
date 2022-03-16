@@ -25,7 +25,7 @@ class GistService {
         self.repository = repository
     }
 
-    func getAllGists(completion: @escaping (Result<[Gist]>) -> ()) {
+    func getAllGists(completion: @escaping (Result<[Gist], Error>) -> ()) {
         let storedGists = repository.getAll()
         if !storedGists.isEmpty {
             completion(.success(storedGists))
@@ -47,11 +47,11 @@ class GistService {
                         self.repository.store(gists)
                         completion(.success(gists))
                     } catch {
-                        completion(.error(error))
+                        completion(.failure(error))
                     }
                     
                 case .failure(let error):
-                    completion(.error(error))
+                    completion(.failure(error))
                 }
         }
     }

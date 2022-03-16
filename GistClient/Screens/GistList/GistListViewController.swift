@@ -64,7 +64,7 @@ class GistListViewController: UIViewController {
             switch result {
             case .success(let gists):
                 self?.state = .populated(gists)
-            case .error(let error):
+            case .failure(let error):
                 self?.state = .error(message: error.localizedDescription)
             }
         }
