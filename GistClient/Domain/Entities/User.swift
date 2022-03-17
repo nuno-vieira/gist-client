@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class User: Object, Codable {
     @objc dynamic var id = 0
     @objc dynamic var avatarUrl = ""

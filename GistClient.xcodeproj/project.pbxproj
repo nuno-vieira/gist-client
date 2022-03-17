@@ -18,7 +18,7 @@
 		2362A41A21A375D900B6C383 /* GistListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41921A375D900B6C383 /* GistListTableViewDelegate.swift */; };
 		2362A41F21A381AD00B6C383 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41E21A381AD00B6C383 /* LoadingView.swift */; };
 		2362A42121A393BB00B6C383 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42021A393BB00B6C383 /* UIColor+hex.swift */; };
-		2362A42321A3943600B6C383 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42221A3943600B6C383 /* Colors.swift */; };
+		2362A42321A3943600B6C383 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A42221A3943600B6C383 /* AppTheme.swift */; };
 		238AA13921A61ECA00F55D84 /* GistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238AA13821A61ECA00F55D84 /* GistRepository.swift */; };
 		23ADDE05219B89E90012635A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ADDE04219B89E90012635A /* AppDelegate.swift */; };
 		23ADDE07219B89E90012635A /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ADDE06219B89E90012635A /* GistListViewController.swift */; };
@@ -30,6 +30,7 @@
 		AD982F6C27E001EF00B5CB3A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6B27E001EF00B5CB3A /* Alamofire */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
+		ADDF77E727E2C4C0009CEA46 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77E627E2C4C0009CEA46 /* AppAppearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,7 @@
 		2362A41921A375D900B6C383 /* GistListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewDelegate.swift; sourceTree = "<group>"; };
 		2362A41E21A381AD00B6C383 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2362A42021A393BB00B6C383 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
-		2362A42221A3943600B6C383 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2362A42221A3943600B6C383 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		238AA13821A61ECA00F55D84 /* GistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRepository.swift; sourceTree = "<group>"; };
 		23ADDE01219B89E90012635A /* GistClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23ADDE04219B89E90012635A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		23B3D310219E3B1A00A37367 /* GistListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewDataSource.swift; sourceTree = "<group>"; };
 		23D5C065219F51D300574650 /* GistListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListTableViewCell.swift; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		ADDF77E627E2C4C0009CEA46 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,49 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23249CD6219CE3C10088DBA7 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2362A41521A3735200B6C383 /* Navigator.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		23249CD7219CE3CD0088DBA7 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				23249CE7219D099E0088DBA7 /* GistList */,
-				23249CE6219D09720088DBA7 /* GistDetail */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		23249CD8219CE3D90088DBA7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				23249CD0219CE1950088DBA7 /* GistService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		23249CD9219CE3E60088DBA7 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				238AA13821A61ECA00F55D84 /* GistRepository.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		23249CDA219CE5550088DBA7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				23249CDC219CEBBA0088DBA7 /* Gist.swift */,
-				23249CE0219CF9BB0088DBA7 /* User.swift */,
-				2362A41121A1DE4F00B6C383 /* File.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		23249CDB219CE5630088DBA7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +80,6 @@
 				ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		23249CE2219D085B0088DBA7 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				2362A42221A3943600B6C383 /* Colors.swift */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 		23249CE6219D09720088DBA7 /* GistDetail */ = {
@@ -180,19 +131,111 @@
 		23ADDE03219B89E90012635A /* GistClient */ = {
 			isa = PBXGroup;
 			children = (
-				23249CDB219CE5630088DBA7 /* Extensions */,
-				23249CD6219CE3C10088DBA7 /* Common */,
-				23249CE2219D085B0088DBA7 /* Theme */,
-				23249CDA219CE5550088DBA7 /* Models */,
-				23249CD9219CE3E60088DBA7 /* Database */,
-				23249CD8219CE3D90088DBA7 /* Services */,
-				23249CD7219CE3CD0088DBA7 /* Screens */,
-				2362A41B21A3816300B6C383 /* Views */,
-				23ADDE04219B89E90012635A /* AppDelegate.swift */,
+				ADDF77E127E2B3CE009CEA46 /* Application */,
+				ADDF77EF27E2C98A009CEA46 /* Infrastructure */,
+				ADDF77E527E2C2EC009CEA46 /* Data */,
+				ADDF77E427E2C26F009CEA46 /* Domain */,
+				ADDF77E327E2C252009CEA46 /* Presentation */,
+				ADDF77E027E2B2BD009CEA46 /* Resources */,
+			);
+			path = GistClient;
+			sourceTree = "<group>";
+		};
+		ADDF77E027E2B2BD009CEA46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				23ADDE0D219B89F20012635A /* LaunchScreen.storyboard */,
 				23ADDE10219B89F20012635A /* Info.plist */,
 			);
-			path = GistClient;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADDF77E127E2B3CE009CEA46 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				23ADDE04219B89E90012635A /* AppDelegate.swift */,
+				ADDF77E627E2C4C0009CEA46 /* AppAppearance.swift */,
+				2362A42221A3943600B6C383 /* AppTheme.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ADDF77E327E2C252009CEA46 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				23249CE7219D099E0088DBA7 /* GistList */,
+				23249CE6219D09720088DBA7 /* GistDetail */,
+				ADDF77ED27E2C878009CEA46 /* Common */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ADDF77E427E2C26F009CEA46 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF77E827E2C52A009CEA46 /* Entities */,
+				ADDF77EA27E2C635009CEA46 /* UseCases */,
+				ADDF77E927E2C558009CEA46 /* RepositoryAdapters */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		ADDF77E527E2C2EC009CEA46 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF77EB27E2C6B0009CEA46 /* GistRepository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ADDF77E827E2C52A009CEA46 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				23249CDC219CEBBA0088DBA7 /* Gist.swift */,
+				23249CE0219CF9BB0088DBA7 /* User.swift */,
+				2362A41121A1DE4F00B6C383 /* File.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		ADDF77E927E2C558009CEA46 /* RepositoryAdapters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepositoryAdapters;
+			sourceTree = "<group>";
+		};
+		ADDF77EA27E2C635009CEA46 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		ADDF77EB27E2C6B0009CEA46 /* GistRepository */ = {
+			isa = PBXGroup;
+			children = (
+				238AA13821A61ECA00F55D84 /* GistRepository.swift */,
+				23249CD0219CE1950088DBA7 /* GistService.swift */,
+			);
+			path = GistRepository;
+			sourceTree = "<group>";
+		};
+		ADDF77ED27E2C878009CEA46 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2362A41521A3735200B6C383 /* Navigator.swift */,
+				2362A41B21A3816300B6C383 /* Views */,
+				23249CDB219CE5630088DBA7 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ADDF77EF27E2C98A009CEA46 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +324,7 @@
 				23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */,
 				2362A41F21A381AD00B6C383 /* LoadingView.swift in Sources */,
 				2362A42121A393BB00B6C383 /* UIColor+hex.swift in Sources */,
-				2362A42321A3943600B6C383 /* Colors.swift in Sources */,
+				2362A42321A3943600B6C383 /* AppTheme.swift in Sources */,
 				ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */,
 				2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */,
 				23D5C066219F51D300574650 /* GistListTableViewCell.swift in Sources */,
@@ -294,6 +337,7 @@
 				23B3D30F219E31B100A37367 /* GistListView.swift in Sources */,
 				2362A41221A1DE4F00B6C383 /* File.swift in Sources */,
 				23249CE1219CF9BB0088DBA7 /* User.swift in Sources */,
+				ADDF77E727E2C4C0009CEA46 /* AppAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,12 +477,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTPG3599NE;
-				INFOPLIST_FILE = GistClient/Info.plist;
+				INFOPLIST_FILE = GistClient/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nuno-vieira.GistClient";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuno-vieira.gist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,12 +495,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTPG3599NE;
-				INFOPLIST_FILE = GistClient/Info.plist;
+				INFOPLIST_FILE = GistClient/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nuno-vieira.GistClient";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuno-vieira.gist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
