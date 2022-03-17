@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class Gist: Object, Codable {
     @objc dynamic var id = ""
     @objc dynamic var createdAt: Date?
