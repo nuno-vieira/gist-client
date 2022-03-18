@@ -41,24 +41,24 @@ class GistListTableViewCell: UITableViewCell {
     lazy var ownerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = .Theme.textColor
+        label.font = AppTheme.Font.subheadline
+        label.textColor = AppTheme.Color.textColor
         return label
     }()
 
     lazy var createdDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
-        label.textColor = .Theme.textColor
+        label.font = AppTheme.Font.footnote
+        label.textColor = AppTheme.Color.textColor
         return label
     }()
 
     lazy var fileNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.textColor = .Theme.boldText
+        label.font = AppTheme.Font.body
+        label.textColor = AppTheme.Color.boldText
         label.numberOfLines = 0
         return label
     }()
@@ -66,8 +66,8 @@ class GistListTableViewCell: UITableViewCell {
     lazy var commentsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .Theme.textColor
+        label.font = AppTheme.Font.footnote
+        label.textColor = AppTheme.Color.textColor
         label.numberOfLines = 1
         label.textAlignment = .right
         return label
@@ -87,7 +87,7 @@ class GistListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
-        backgroundColor = UIColor.Theme.contentBackgroundColor
+        backgroundColor = AppTheme.Color.contentBackgroundColor
         
         addSubview(ownerImageView)
         addSubview(ownerNameLabel)
@@ -103,7 +103,7 @@ class GistListTableViewCell: UITableViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            ownerNameLabel.topAnchor.constraint(equalTo: ownerImageView.topAnchor),
+            ownerNameLabel.topAnchor.constraint(equalTo: ownerImageView.topAnchor, constant: -4),
             ownerNameLabel.leadingAnchor.constraint(equalTo: ownerImageView.trailingAnchor, constant: 12)
         ])
 

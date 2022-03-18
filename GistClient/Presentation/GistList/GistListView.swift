@@ -21,7 +21,7 @@ class GistListView: UIView {
         let view = UITableView(frame: .zero)
         view.tableFooterView = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.Theme.contentBackgroundColor
+        view.backgroundColor = AppTheme.Color.contentBackgroundColor
         return view
     }()
 
