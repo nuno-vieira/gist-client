@@ -15,19 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
+        // DB Migration
         let config = Realm.Configuration(
             schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
                 //if (oldSchemaVersion < 1) { }
             }
         )
-
         Realm.Configuration.defaultConfiguration = config
-
         _ = try! Realm()
         
-        setupNavigationBarAppearance()
+        AppTheme.setupNavigationBar()
+
         initRootViewController()
         
         return true 
@@ -40,25 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController(rootViewController: gistListVC)
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
-    }
-
-    func setupNavigationBarAppearance() {
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.navTitleColor]
-
-        UINavigationBar.appearance().prefersLargeTitles = false
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .Theme.navBarColor
-        UINavigationBar.appearance().tintColor = .Theme.navTitleColor
-        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
-
-        if #available(iOS 15.0, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.backgroundColor = .Theme.navBarColor
-            navigationBarAppearance.titleTextAttributes = titleTextAttributes
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-        }
     }
 
 }

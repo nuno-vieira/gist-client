@@ -28,7 +28,7 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.navigationDelegate = self
-        webView.backgroundColor = UIColor.Theme.contentBackgroundColor
+        webView.backgroundColor = AppTheme.Color.contentBackgroundColor
         webView.isOpaque = false
         view = webView
     }

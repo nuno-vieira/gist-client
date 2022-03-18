@@ -13,8 +13,8 @@ class NotificationMessageView: UIView {
     lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = UIColor.white
+        label.font = AppTheme.Font.body
+        label.textColor = AppTheme.Color.textColor
         return label
     }()
 
@@ -24,11 +24,11 @@ class NotificationMessageView: UIView {
         var color: UIColor {
             switch self {
             case .error:
-                return UIColor.Theme.errorColor
+                return AppTheme.Color.errorColor
             case .success:
-                return UIColor.green
+                return AppTheme.Color.successColor
             case .warning:
-                return UIColor.yellow
+                return AppTheme.Color.warningColor
             }
         }
     }
@@ -42,7 +42,7 @@ class NotificationMessageView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = UIColor.Theme.errorColor
+        backgroundColor = AppTheme.Color.errorColor
         addSubview(messageLabel)
 
         NSLayoutConstraint.activate([
