@@ -7,18 +7,8 @@
 //
 
 import Foundation
-import RealmSwift
 
-class File: Object, Codable {
-    @objc dynamic var name: String = ""
-    @objc dynamic var type: String = ""
-    @objc dynamic var language: String?
-    @objc dynamic var rawUrl: String = ""
-
-    enum CodingKeys: String, CodingKey {
-        case name = "filename"
-        case type
-        case language
-        case rawUrl = "raw_url"
-    }
+struct File {
+    var name: String
+    var rawUrl: URL
 }
