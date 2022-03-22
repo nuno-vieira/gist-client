@@ -419,6 +419,8 @@
 				AD3E750E27E9191800B6D383 /* GetGistsUseCase.swift in Sources */,
 				23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */,
 				23B3D311219E3B1A00A37367 /* GistListTableViewDataSource.swift in Sources */,
+				AD3E753927E95F4300B6D383 /* RealmDatabaseMigration.swift in Sources */,
+				AD3E753627E95F0C00B6D383 /* DatabaseMigration.swift in Sources */,
 				2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */,
 				2362A41621A3735200B6C383 /* Navigator.swift in Sources */,
 				AD17CDF527E412BE00E0D092 /* AppTheme+Font.swift in Sources */,

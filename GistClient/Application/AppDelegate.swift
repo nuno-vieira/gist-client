@@ -7,29 +7,17 @@
 //
 
 import UIKit
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var dbMigration: DatabaseMigration = RealmDatabaseMigration()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        // DB Migration
-        let config = Realm.Configuration(
-            schemaVersion: 2,
-            migrationBlock: { migration, oldSchemaVersion in
-                //if (oldSchemaVersion < 1) { }
-            }
-        )
-        Realm.Configuration.defaultConfiguration = config
-        _ = try! Realm()
-        
+        dbMigration.run()
         AppTheme.setupNavigationBar()
-
         initRootViewController()
-        
         return true 
     }
 
