@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */; };
-		23249CD1219CE1950088DBA7 /* GistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CD0219CE1950088DBA7 /* GistService.swift */; };
 		23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CDC219CEBBA0088DBA7 /* Gist.swift */; };
 		23249CE1219CF9BB0088DBA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CE0219CF9BB0088DBA7 /* User.swift */; };
 		2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */; };
@@ -31,8 +30,19 @@
 		AD3E751027E9198B00B6D383 /* GistsRepositoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E750F27E9198B00B6D383 /* GistsRepositoryAdapter.swift */; };
 		AD3E752027E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E751F27E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift */; };
 		AD3E752427E91D6900B6D383 /* MockGistsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E752327E91D6900B6D383 /* MockGistsRepository.swift */; };
+		AD3E752927E9516600B6D383 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E752827E9516600B6D383 /* GistEntity.swift */; };
+		AD3E752B27E9517100B6D383 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E752A27E9517100B6D383 /* UserEntity.swift */; };
+		AD3E752D27E9518100B6D383 /* FileEntiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E752C27E9518100B6D383 /* FileEntiy.swift */; };
+		AD3E753027E95E7E00B6D383 /* GistNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E752F27E95E7E00B6D383 /* GistNetwork.swift */; };
+		AD3E753227E95E9200B6D383 /* GistDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E753127E95E9200B6D383 /* GistDatabase.swift */; };
+		AD3E753627E95F0C00B6D383 /* DatabaseMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E753527E95F0C00B6D383 /* DatabaseMigration.swift */; };
+		AD3E753927E95F4300B6D383 /* RealmDatabaseMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E753827E95F4300B6D383 /* RealmDatabaseMigration.swift */; };
 		AD3E753B27E962CA00B6D383 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E753A27E962CA00B6D383 /* Endpoint.swift */; };
 		AD3E753D27E9654C00B6D383 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E753C27E9654C00B6D383 /* NetworkService.swift */; };
+		AD56BFBB27EA952C00CECECB /* GistDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFBA27EA952C00CECECB /* GistDTO.swift */; };
+		AD56BFBD27EA967300CECECB /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFBC27EA967300CECECB /* UserDTO.swift */; };
+		AD56BFBF27EA972E00CECECB /* FileDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFBE27EA972E00CECECB /* FileDTO.swift */; };
+		AD56BFD427EAB53000CECECB /* RealmGistDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFD327EAB53000CECECB /* RealmGistDatabase.swift */; };
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
@@ -51,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
-		23249CD0219CE1950088DBA7 /* GistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistService.swift; sourceTree = "<group>"; };
 		23249CDC219CEBBA0088DBA7 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		23249CE0219CF9BB0088DBA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessageView.swift; sourceTree = "<group>"; };
@@ -77,8 +86,19 @@
 		AD3E751527E91C4600B6D383 /* GistClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3E751F27E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetGistsUseCaseTests.swift; sourceTree = "<group>"; };
 		AD3E752327E91D6900B6D383 /* MockGistsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGistsRepository.swift; sourceTree = "<group>"; };
+		AD3E752827E9516600B6D383 /* GistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntity.swift; sourceTree = "<group>"; };
+		AD3E752A27E9517100B6D383 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		AD3E752C27E9518100B6D383 /* FileEntiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntiy.swift; sourceTree = "<group>"; };
+		AD3E752F27E95E7E00B6D383 /* GistNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistNetwork.swift; sourceTree = "<group>"; };
+		AD3E753127E95E9200B6D383 /* GistDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDatabase.swift; sourceTree = "<group>"; };
+		AD3E753527E95F0C00B6D383 /* DatabaseMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMigration.swift; sourceTree = "<group>"; };
+		AD3E753827E95F4300B6D383 /* RealmDatabaseMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseMigration.swift; sourceTree = "<group>"; };
 		AD3E753A27E962CA00B6D383 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AD3E753C27E9654C00B6D383 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AD56BFBA27EA952C00CECECB /* GistDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDTO.swift; sourceTree = "<group>"; };
+		AD56BFBC27EA967300CECECB /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AD56BFBE27EA972E00CECECB /* FileDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDTO.swift; sourceTree = "<group>"; };
+		AD56BFD327EAB53000CECECB /* RealmGistDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGistDatabase.swift; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +218,44 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		AD3E752527E940F900B6D383 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E752F27E95E7E00B6D383 /* GistNetwork.swift */,
+				AD3E752727E9515400B6D383 /* DTOs */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AD3E752627E9410000B6D383 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E753127E95E9200B6D383 /* GistDatabase.swift */,
+				AD56BFD227EAAD7E00CECECB /* Realm */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AD3E752727E9515400B6D383 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				AD56BFBA27EA952C00CECECB /* GistDTO.swift */,
+				AD56BFBC27EA967300CECECB /* UserDTO.swift */,
+				AD56BFBE27EA972E00CECECB /* FileDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		AD3E752E27E95E3300B6D383 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E752827E9516600B6D383 /* GistEntity.swift */,
+				AD3E752A27E9517100B6D383 /* UserEntity.swift */,
+				AD3E752C27E9518100B6D383 /* FileEntiy.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		AD3E753327E95EEF00B6D383 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +263,32 @@
 				AD3E753C27E9654C00B6D383 /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AD3E753427E95EF400B6D383 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E753527E95F0C00B6D383 /* DatabaseMigration.swift */,
+				AD3E753727E95F2C00B6D383 /* Realm */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AD3E753727E95F2C00B6D383 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E753827E95F4300B6D383 /* RealmDatabaseMigration.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		AD56BFD227EAAD7E00CECECB /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				AD56BFD327EAB53000CECECB /* RealmGistDatabase.swift */,
+				AD3E752E27E95E3300B6D383 /* Entities */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		ADDF77E027E2B2BD009CEA46 /* Resources */ = {
@@ -285,7 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				238AA13821A61ECA00F55D84 /* GistRepository.swift */,
-				23249CD0219CE1950088DBA7 /* GistService.swift */,
+				AD3E752627E9410000B6D383 /* Database */,
+				AD3E752527E940F900B6D383 /* Network */,
 			);
 			path = GistRepository;
 			sourceTree = "<group>";
@@ -419,12 +504,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				238AA13921A61ECA00F55D84 /* GistRepository.swift in Sources */,
+				AD56BFBB27EA952C00CECECB /* GistDTO.swift in Sources */,
 				2362A41A21A375D900B6C383 /* GistListTableViewDelegate.swift in Sources */,
-				23249CD1219CE1950088DBA7 /* GistService.swift in Sources */,
 				23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */,
 				2362A41F21A381AD00B6C383 /* LoadingView.swift in Sources */,
+				AD3E753227E95E9200B6D383 /* GistDatabase.swift in Sources */,
 				2362A42121A393BB00B6C383 /* UIColor+hex.swift in Sources */,
 				AD3E753B27E962CA00B6D383 /* Endpoint.swift in Sources */,
+				AD56BFBF27EA972E00CECECB /* FileDTO.swift in Sources */,
 				ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */,
 				2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */,
 				AD3E753D27E9654C00B6D383 /* NetworkService.swift in Sources */,
@@ -434,16 +521,22 @@
 				23B3D311219E3B1A00A37367 /* GistListTableViewDataSource.swift in Sources */,
 				AD3E753927E95F4300B6D383 /* RealmDatabaseMigration.swift in Sources */,
 				AD3E753627E95F0C00B6D383 /* DatabaseMigration.swift in Sources */,
+				AD3E753027E95E7E00B6D383 /* GistNetwork.swift in Sources */,
 				2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */,
+				AD3E752B27E9517100B6D383 /* UserEntity.swift in Sources */,
 				2362A41621A3735200B6C383 /* Navigator.swift in Sources */,
 				AD17CDF527E412BE00E0D092 /* AppTheme+Font.swift in Sources */,
+				AD56BFBD27EA967300CECECB /* UserDTO.swift in Sources */,
 				23ADDE07219B89E90012635A /* GistListViewController.swift in Sources */,
+				AD3E752D27E9518100B6D383 /* FileEntiy.swift in Sources */,
 				AD3E751027E9198B00B6D383 /* GistsRepositoryAdapter.swift in Sources */,
 				23ADDE05219B89E90012635A /* AppDelegate.swift in Sources */,
 				23B3D30F219E31B100A37367 /* GistListView.swift in Sources */,
 				2362A41221A1DE4F00B6C383 /* File.swift in Sources */,
+				AD56BFD427EAB53000CECECB /* RealmGistDatabase.swift in Sources */,
 				AD17CDF327E412B200E0D092 /* AppTheme+Color.swift in Sources */,
 				23249CE1219CF9BB0088DBA7 /* User.swift in Sources */,
+				AD3E752927E9516600B6D383 /* GistEntity.swift in Sources */,
 				ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
