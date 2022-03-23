@@ -1,6 +1,4 @@
-//  Created by Vieira, Nuno (Developer) on 21/11/2018.
-//  Copyright © 2018 nuno-vieira. All rights reserved.
-//
+//  Copyright © 2022 nuno-vieira. All rights reserved.
 
 import Foundation
 import RealmSwift

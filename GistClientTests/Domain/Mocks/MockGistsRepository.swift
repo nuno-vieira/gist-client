@@ -1,10 +1,4 @@
-//
-//  MockGistsRepository.swift
-//  GistClientTests
-//
-//  Created by Nuno Vieira on 21/03/2022.
 //  Copyright © 2022 nuno-vieira. All rights reserved.
-//
 
 import Foundation
 @testable import GistClient
