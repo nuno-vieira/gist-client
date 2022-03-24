@@ -29,7 +29,7 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = gist.filename
+        title = gist.files.first?.name
 
         view.addSubview(loadingView)
 
@@ -40,8 +40,7 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
             loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        guard let url = URL(string: gist.url) else { return }
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: gist.htmlUrl)
         webView.load(request)
     }
     
@@ -51,7 +50,7 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
             document.querySelector('.gist-detail-intro').remove();
         """, completionHandler: { _, _ in
             // The delay is to make sure the js has finished evaluate.
-            // This is to avoid a minor flicker in the UI.
+            // This is to avoid a minor UI flicker.
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.loadingView.isHidden = true
             }
