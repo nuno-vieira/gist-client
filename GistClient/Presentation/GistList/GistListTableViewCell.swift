@@ -7,17 +7,13 @@ class GistListTableViewCell: UITableViewCell {
     var gist: Gist? = nil {
         didSet {
             guard let gist = self.gist else { return }
-            
-            if let owner = gist.owner {
-                ownerImageView.loadImage(url: URL(string: owner.avatarUrl))
-                ownerNameLabel.text = owner.name
-            }
-            if let date = gist.createdAt {
-                createdDateLabel.text = "\(dateFormatter.string(from: date))"
-            }
-            
             commentsLabel.text = "\(String(gist.numberOfComments)) 💬"
-            fileNameLabel.text = gist.filename + ""
+            fileNameLabel.text = gist.files.first?.name ?? "" + ""
+            createdDateLabel.text = "\(dateFormatter.string(from: gist.createdAt))"
+
+            let owner = gist.owner
+            ownerImageView.loadImage(url: owner.avatarUrl)
+            ownerNameLabel.text = owner.name
         }
     }
     

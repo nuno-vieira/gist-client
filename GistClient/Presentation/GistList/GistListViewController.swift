@@ -17,9 +17,9 @@ class GistListViewController: UIViewController {
         case error(message: String)
     }
     
-    let service: GistService
-    init(gistService: GistService) {
-        self.service = gistService
+    let getGistsUseCase: GetGistsUseCase
+    init(getGistsUseCase: GetGistsUseCase) {
+        self.getGistsUseCase = getGistsUseCase
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -54,12 +54,14 @@ class GistListViewController: UIViewController {
         gistListView.tableView.delegate = self
         
         state = .loading
-        service.getAllGists { [weak self] (result) in
-            switch result {
-            case .success(let gists):
-                self?.state = .populated(gists)
-            case .failure(let error):
-                self?.state = .error(message: error.localizedDescription)
+        getGistsUseCase.execute { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let gists):
+                    self?.state = .populated(gists)
+                case .failure(let error):
+                    self?.state = .error(message: error.localizedDescription)
+                }
             }
         }
     }

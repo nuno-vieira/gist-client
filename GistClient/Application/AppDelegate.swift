@@ -16,11 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func initRootViewController() {
+        let networkConfig = NetworkConfig(baseUrl: URL(string: "https://api.github.com")!)
+        let networkService = URLSessionNetworkService(networkConfig: networkConfig)
+        let gistsNetwork = DefaultGistNetwork(networkService: networkService)
+        let gistsDatabase = RealmGistDatabase()
+        let gistsRepository = GistRepository(database: gistsDatabase, network: gistsNetwork)
+        let getGistsUseCase = DefaultGetGistsUseCase(gistsRepository: gistsRepository)
+        let gistListViewController = GistListViewController(getGistsUseCase: getGistsUseCase)
+        let navigationController = UINavigationController(rootViewController: gistListViewController)
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let service = GistService(repository: GistRepository())
-        let gistListVC = GistListViewController(gistService: service)
-        let nav = UINavigationController(rootViewController: gistListVC)
-        self.window?.rootViewController = nav
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 
