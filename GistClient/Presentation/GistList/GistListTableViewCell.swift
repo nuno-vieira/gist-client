@@ -2,7 +2,7 @@
 
 import UIKit
 
-class GistListTableViewCell: UITableViewCell {
+class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     var gist: Gist? = nil {
         didSet {

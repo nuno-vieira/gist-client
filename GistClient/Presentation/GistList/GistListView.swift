@@ -24,10 +24,7 @@ class GistListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        tableView.register(
-            GistListTableViewCell.self,
-            forCellReuseIdentifier: String(describing: GistListTableViewCell.self)
-        )
+        tableView.registerCell(GistListTableViewCell.self)
        
         addSubview(tableView)
         addSubview(notificationMessageView)
