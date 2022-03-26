@@ -11,10 +11,7 @@ class GistListTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GistListTableViewCell.self)) as? GistListTableViewCell else {
-            return UITableViewCell()
-        }
-        
+        let cell = tableView.reuseCell(GistListTableViewCell.self, for: indexPath)
         let gist = gists[indexPath.row]
         cell.gist = gist
         return cell

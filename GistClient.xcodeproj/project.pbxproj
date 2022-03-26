@@ -43,6 +43,9 @@
 		AD56BFBD27EA967300CECECB /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFBC27EA967300CECECB /* UserDTO.swift */; };
 		AD56BFBF27EA972E00CECECB /* FileDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFBE27EA972E00CECECB /* FileDTO.swift */; };
 		AD56BFD427EAB53000CECECB /* RealmGistDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BFD327EAB53000CECECB /* RealmGistDatabase.swift */; };
+		AD7B51D727EF7B8C0068CBD1 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51D627EF7B8C0068CBD1 /* ReuseIdentifiable.swift */; };
+		AD7B51D927EF7BAD0068CBD1 /* UITableView+registerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */; };
+		AD7B51DB27EF7BD40068CBD1 /* UITableView+reuseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */; };
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
@@ -99,6 +102,9 @@
 		AD56BFBC27EA967300CECECB /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		AD56BFBE27EA972E00CECECB /* FileDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDTO.swift; sourceTree = "<group>"; };
 		AD56BFD327EAB53000CECECB /* RealmGistDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGistDatabase.swift; sourceTree = "<group>"; };
+		AD7B51D627EF7B8C0068CBD1 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+registerCell.swift"; sourceTree = "<group>"; };
+		AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reuseCell.swift"; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,8 @@
 			children = (
 				2362A42021A393BB00B6C383 /* UIColor+hex.swift */,
 				ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */,
+				AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */,
+				AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				2362A41521A3735200B6C383 /* Navigator.swift */,
+				AD7B51D627EF7B8C0068CBD1 /* ReuseIdentifiable.swift */,
 				2362A41B21A3816300B6C383 /* Views */,
 				23249CDB219CE5630088DBA7 /* Extensions */,
 			);
@@ -503,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7B51D927EF7BAD0068CBD1 /* UITableView+registerCell.swift in Sources */,
 				238AA13921A61ECA00F55D84 /* GistRepository.swift in Sources */,
 				AD56BFBB27EA952C00CECECB /* GistDTO.swift in Sources */,
 				2362A41A21A375D900B6C383 /* GistListTableViewDelegate.swift in Sources */,
@@ -525,6 +535,7 @@
 				2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */,
 				AD3E752B27E9517100B6D383 /* UserEntity.swift in Sources */,
 				2362A41621A3735200B6C383 /* Navigator.swift in Sources */,
+				AD7B51D727EF7B8C0068CBD1 /* ReuseIdentifiable.swift in Sources */,
 				AD17CDF527E412BE00E0D092 /* AppTheme+Font.swift in Sources */,
 				AD56BFBD27EA967300CECECB /* UserDTO.swift in Sources */,
 				23ADDE07219B89E90012635A /* GistListViewController.swift in Sources */,
@@ -535,6 +546,7 @@
 				2362A41221A1DE4F00B6C383 /* File.swift in Sources */,
 				AD56BFD427EAB53000CECECB /* RealmGistDatabase.swift in Sources */,
 				AD17CDF327E412B200E0D092 /* AppTheme+Color.swift in Sources */,
+				AD7B51DB27EF7BD40068CBD1 /* UITableView+reuseCell.swift in Sources */,
 				23249CE1219CF9BB0088DBA7 /* User.swift in Sources */,
 				AD3E752927E9516600B6D383 /* GistEntity.swift in Sources */,
 				ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */,
