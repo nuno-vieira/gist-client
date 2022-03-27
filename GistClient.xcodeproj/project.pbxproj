@@ -46,6 +46,8 @@
 		AD7B51D727EF7B8C0068CBD1 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51D627EF7B8C0068CBD1 /* ReuseIdentifiable.swift */; };
 		AD7B51D927EF7BAD0068CBD1 /* UITableView+registerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */; };
 		AD7B51DB27EF7BD40068CBD1 /* UITableView+reuseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */; };
+		AD7B51E327F12BA90068CBD1 /* GistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51E227F12BA90068CBD1 /* GistDetailViewModel.swift */; };
+		AD7B51E527F12CCC0068CBD1 /* GistDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B51E427F12CCC0068CBD1 /* GistDetailViewModelTests.swift */; };
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
@@ -105,6 +107,8 @@
 		AD7B51D627EF7B8C0068CBD1 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+registerCell.swift"; sourceTree = "<group>"; };
 		AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reuseCell.swift"; sourceTree = "<group>"; };
+		AD7B51E227F12BA90068CBD1 /* GistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewModel.swift; sourceTree = "<group>"; };
+		AD7B51E427F12CCC0068CBD1 /* GistDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewModelTests.swift; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,7 +147,8 @@
 		23249CE6219D09720088DBA7 /* GistDetail */ = {
 			isa = PBXGroup;
 			children = (
-				23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */,
+				AD7B51E127F12B950068CBD1 /* ViewModel */,
+				AD7B51E027F12B910068CBD1 /* View */,
 			);
 			path = GistDetail;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 		AD3E751627E91C4600B6D383 /* GistClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD7B51DC27EF80BD0068CBD1 /* Presentation */,
 				AD3E752127E91D2100B6D383 /* Domain */,
 			);
 			path = GistClientTests;
@@ -213,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3E752227E91D5400B6D383 /* Mocks */,
-				AD3E751F27E91C9800B6D383 /* GetGistsUseCaseTests.swift */,
+				AD3E751F27E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -297,6 +303,38 @@
 				AD3E752E27E95E3300B6D383 /* Entities */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		AD7B51DC27EF80BD0068CBD1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B51DD27EF80D60068CBD1 /* GistDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD7B51DD27EF80D60068CBD1 /* GistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B51E427F12CCC0068CBD1 /* GistDetailViewModelTests.swift */,
+			);
+			path = GistDetail;
+			sourceTree = "<group>";
+		};
+		AD7B51E027F12B910068CBD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD7B51E127F12B950068CBD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B51E227F12BA90068CBD1 /* GistDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ADDF77E027E2B2BD009CEA46 /* Resources */ = {
@@ -527,6 +565,7 @@
 				AD3E753D27E9654C00B6D383 /* NetworkService.swift in Sources */,
 				23D5C066219F51D300574650 /* GistListTableViewCell.swift in Sources */,
 				AD3E750E27E9191800B6D383 /* GetGistsUseCase.swift in Sources */,
+				AD7B51E327F12BA90068CBD1 /* GistDetailViewModel.swift in Sources */,
 				23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */,
 				23B3D311219E3B1A00A37367 /* GistListTableViewDataSource.swift in Sources */,
 				AD3E753927E95F4300B6D383 /* RealmDatabaseMigration.swift in Sources */,
@@ -559,7 +598,6 @@
 			files = (
 				AD3E752427E91D6900B6D383 /* MockGistsRepository.swift in Sources */,
 				AD7B51E527F12CCC0068CBD1 /* GistDetailViewModelTests.swift in Sources */,
-				AD3E752027E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

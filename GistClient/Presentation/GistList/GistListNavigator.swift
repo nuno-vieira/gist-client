@@ -16,7 +16,8 @@ class GistListNavigator: Navigator {
     func navigate(to destination: Destination) {
         switch destination {
         case let .detail(gist):
-            let detailVC = GistDetailViewController(gist: gist)
+            let viewModel = GistDetailViewModel(gist: gist)
+            let detailVC = GistDetailViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }

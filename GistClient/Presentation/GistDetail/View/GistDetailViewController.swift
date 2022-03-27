@@ -7,10 +7,10 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var loadingView: LoadingView = LoadingView(frame: .zero)
     
-    let gist: Gist
+    let viewModel: GistDetailViewModel
     
-    init(gist: Gist) {
-        self.gist = gist
+    init(viewModel: GistDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,7 +29,7 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = gist.files.first?.name
+        title = viewModel.title
 
         view.addSubview(loadingView)
 
@@ -40,18 +40,19 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
             loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        let request = URLRequest(url: gist.htmlUrl)
+        let request = URLRequest(url: viewModel.gistHtmlUrl)
         webView.load(request)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Remove the headers from the web page.
         webView.evaluateJavaScript("""
             document.querySelector('.js-header-wrapper').remove();
             document.querySelector('.gist-detail-intro').remove();
         """, completionHandler: { _, _ in
             // The delay is to make sure the js has finished evaluate.
             // This is to avoid a minor UI flicker.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.loadingView.isHidden = true
             }
         })
