@@ -2,23 +2,19 @@
 
 import UIKit
 
-class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
+class GistListItemCell: UITableViewCell, ReuseIdentifiable {
     
-    var gist: Gist? = nil {
+    var viewModel: GistListItemViewModel? = nil {
         didSet {
-            guard let gist = self.gist else { return }
-            commentsLabel.text = "\(String(gist.numberOfComments)) 💬"
-            fileNameLabel.text = gist.files.first?.name ?? "" + ""
-            createdDateLabel.text = "\(dateFormatter.string(from: gist.createdAt))"
-
-            let owner = gist.owner
-            ownerImageView.loadImage(url: owner.avatarUrl)
-            ownerNameLabel.text = owner.name
+            fileNameLabel.text = viewModel?.fileNameText
+            commentsLabel.text = viewModel?.commentsText
+            createdAtLabel.text = viewModel?.createdAtText
+            ownerNameLabel.text = viewModel?.ownerNameText
+            ownerImageView.loadImage(url: viewModel?.ownerAvatarUrl)
         }
     }
-    
 
-    let imageSize = CGSize(width: 28, height: 28)
+    let ownerAvatarSize = CGSize(width: 28, height: 28)
 
     lazy var ownerImageView: UIImageView = {
         let imageView = UIImageView()
@@ -36,7 +32,7 @@ class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
         return label
     }()
 
-    lazy var createdDateLabel: UILabel = {
+    lazy var createdAtLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppTheme.Font.footnote
@@ -62,12 +58,6 @@ class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
         label.textAlignment = .right
         return label
     }()
-    
-    lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        return formatter
-    }()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -81,13 +71,13 @@ class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
         
         addSubview(ownerImageView)
         addSubview(ownerNameLabel)
-        addSubview(createdDateLabel)
+        addSubview(createdAtLabel)
         addSubview(fileNameLabel)
         addSubview(commentsLabel)
 
         NSLayoutConstraint.activate([
-            ownerImageView.widthAnchor.constraint(equalToConstant: imageSize.width),
-            ownerImageView.heightAnchor.constraint(equalToConstant: imageSize.height),
+            ownerImageView.widthAnchor.constraint(equalToConstant: ownerAvatarSize.width),
+            ownerImageView.heightAnchor.constraint(equalToConstant: ownerAvatarSize.height),
             ownerImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             ownerImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
         ])
@@ -98,13 +88,13 @@ class GistListTableViewCell: UITableViewCell, ReuseIdentifiable {
         ])
 
         NSLayoutConstraint.activate([
-            createdDateLabel.topAnchor.constraint(equalTo: ownerNameLabel.bottomAnchor, constant: 2),
-            createdDateLabel.leadingAnchor.constraint(equalTo: ownerNameLabel.leadingAnchor)
+            createdAtLabel.topAnchor.constraint(equalTo: ownerNameLabel.bottomAnchor, constant: 2),
+            createdAtLabel.leadingAnchor.constraint(equalTo: ownerNameLabel.leadingAnchor)
         ])
 
         NSLayoutConstraint.activate([
             fileNameLabel.leadingAnchor.constraint(equalTo: ownerNameLabel.leadingAnchor),
-            fileNameLabel.topAnchor.constraint(equalTo: createdDateLabel.bottomAnchor, constant: 8),
+            fileNameLabel.topAnchor.constraint(equalTo: createdAtLabel.bottomAnchor, constant: 8),
             fileNameLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
         ])
 
