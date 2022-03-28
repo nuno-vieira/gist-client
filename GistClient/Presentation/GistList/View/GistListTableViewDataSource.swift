@@ -11,9 +11,9 @@ class GistListTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.reuseCell(GistListTableViewCell.self, for: indexPath)
+        let cell = tableView.reuseCell(GistListItemCell.self, for: indexPath)
         let gist = gists[indexPath.row]
-        cell.gist = gist
+        cell.viewModel = GistListItemViewModel(gist: gist)
         return cell
     }
     

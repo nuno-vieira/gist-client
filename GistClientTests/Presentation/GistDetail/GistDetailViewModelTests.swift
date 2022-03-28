@@ -14,13 +14,15 @@ class GistDetailViewModelTests: XCTestCase {
         files: [File(name: "hello_world.py", rawUrl: URL(string: "raw")!)]
     )
 
+    var viewModel: GistDetailViewModel {
+        GistDetailViewModel(gist: gist)
+    }
+
     func test_gistHtmlUrl() {
-        let viewModel = GistDetailViewModel(gist: gist)
         XCTAssertEqual(viewModel.gistHtmlUrl.absoluteString, "url")
     }
 
     func test_title() {
-        let viewModel = GistDetailViewModel(gist: gist)
         XCTAssertEqual(viewModel.title, "hello_world.py")
     }
 
