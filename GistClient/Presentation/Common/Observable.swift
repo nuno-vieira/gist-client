@@ -24,7 +24,7 @@ public final class Observable<Value> {
         onChange(self.value)
     }
 
-    public func remove(_ observer: AnyObject) {
+    public func remove(observer: AnyObject) {
         observers = observers.filter { $0.observer !== observer }
     }
 
