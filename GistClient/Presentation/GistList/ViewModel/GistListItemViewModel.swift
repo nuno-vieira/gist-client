@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct GistListItemViewModel {
+struct GistListItemViewModel: Equatable {
     let fileNameText: String
     let commentsText: String
     let createdAtText: String

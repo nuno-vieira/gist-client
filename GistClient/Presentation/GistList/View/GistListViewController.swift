@@ -3,44 +3,22 @@
 import UIKit
 
 class GistListViewController: UIViewController {
-    
-    let gistListView = GistListView(frame: .zero)
     let dataSource = GistListTableViewDataSource()
-    
-    lazy var navigator: GistListNavigator = {
-        return GistListNavigator(navigationController: self.navigationController)
-    }()
-    
-    enum State {
-        case loading
-        case populated([Gist])
-        case error(message: String)
-    }
-    
-    let getGistsUseCase: GetGistsUseCase
-    init(getGistsUseCase: GetGistsUseCase) {
-        self.getGistsUseCase = getGistsUseCase
+
+    let viewModel: GistListViewModel
+    let navigator: GistListNavigator
+
+    init(viewModel: GistListViewModel, navigator: GistListNavigator) {
+        self.viewModel = viewModel
+        self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private var state: State = .loading {
-        didSet {
-            switch state {
-            case .loading:
-                gistListView.showLoading()
-            case let .populated(gists):
-                gistListView.hideLoading()
-                dataSource.gists = gists
-                gistListView.tableView.reloadData()
-            case let .error(message):
-                gistListView.showError(message: message)
-            }
-        }
-    }
+
+    let gistListView = GistListView(frame: .zero)
 
     override func loadView() {
         view = gistListView
@@ -48,22 +26,36 @@ class GistListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Gists"
-        gistListView.tableView.dataSource = dataSource
-        gistListView.tableView.delegate = self
-        
-        state = .loading
-        getGistsUseCase.execute { [weak self] (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let gists):
-                    self?.state = .populated(gists)
-                case .failure(let error):
-                    self?.state = .error(message: error.localizedDescription)
-                }
-            }
+
+        gistListView.configure(dataSource: dataSource)
+        gistListView.configure(delegate: self)
+
+        title = viewModel.title
+        viewModel.viewDidLoad()
+
+        viewModel.state.observe(self) { [weak self] state in
+            self?.onStateChanged(state)
         }
+        viewModel.route.observe(self) { [weak self] route in
+            route.map { self?.onRouteChanged($0) }
+        }
+    }
+
+    private func onStateChanged(_ state: GistListViewState) {
+        switch state {
+        case .loading:
+            gistListView.showLoading()
+        case .populated(let items):
+            dataSource.items = items
+            gistListView.hideLoading()
+            gistListView.reloadData()
+        case .error(let message):
+            gistListView.showError(message: message)
+        }
+    }
+
+    private func onRouteChanged(_ route: GistListRoute) {
+        navigator.navigate(to: route)
     }
 
 }

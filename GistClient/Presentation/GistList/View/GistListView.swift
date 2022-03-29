@@ -4,22 +4,22 @@ import UIKit
 
 class GistListView: UIView {
     
-    lazy var notificationMessageView: NotificationMessageView = {
+    lazy private var notificationMessageView: NotificationMessageView = {
         let view = NotificationMessageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
     }()
 
-    lazy var tableView: UITableView = {
+    lazy private var loadingView = LoadingView()
+
+    lazy private var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         view.tableFooterView = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = AppTheme.Color.contentBackgroundColor
         return view
     }()
-
-    lazy var loadingView = LoadingView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +55,15 @@ class GistListView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    func configure(dataSource: UITableViewDataSource) {
+        tableView.dataSource = dataSource
+    }
+
+    func configure(delegate: UITableViewDelegate) {
+        tableView.delegate = delegate
+    }
+
     func showLoading() {
         loadingView.isHidden = false
         notificationMessageView.isHidden = true
@@ -70,5 +78,9 @@ class GistListView: UIView {
         loadingView.isHidden = true
         notificationMessageView.isHidden = false
         notificationMessageView.messageLabel.text = message
+    }
+
+    func reloadData() {
+        tableView.reloadData()
     }
 }
