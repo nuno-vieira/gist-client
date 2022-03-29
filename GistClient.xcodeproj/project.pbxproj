@@ -90,7 +90,7 @@
 		AD3E750D27E9191800B6D383 /* GetGistsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGistsUseCase.swift; sourceTree = "<group>"; };
 		AD3E750F27E9198B00B6D383 /* GistsRepositoryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryAdapter.swift; sourceTree = "<group>"; };
 		AD3E751527E91C4600B6D383 /* GistClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD3E751F27E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetGistsUseCaseTests.swift; sourceTree = "<group>"; };
+		AD3E751F27E91C9800B6D383 /* GetGistsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGistsUseCaseTests.swift; sourceTree = "<group>"; };
 		AD3E752327E91D6900B6D383 /* MockGistsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGistsRepository.swift; sourceTree = "<group>"; };
 		AD3E752827E9516600B6D383 /* GistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntity.swift; sourceTree = "<group>"; };
 		AD3E752A27E9517100B6D383 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3E752227E91D5400B6D383 /* Mocks */,
-				AD3E751F27E91C9800B6D383 /* DefaultGetGistsUseCaseTests.swift */,
+				AD3E751F27E91C9800B6D383 /* GetGistsUseCaseTests.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
