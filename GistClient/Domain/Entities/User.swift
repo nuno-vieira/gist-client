@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct User {
+struct User: Equatable {
     var id: Int
     var avatarUrl: URL?
     var name: String

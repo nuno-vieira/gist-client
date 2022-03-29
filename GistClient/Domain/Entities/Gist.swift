@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Gist {
+struct Gist: Equatable {
     var id: String
     var createdAt: Date
     var numberOfComments: Int

@@ -4,16 +4,15 @@ import UIKit
 
 class GistListTableViewDataSource: NSObject, UITableViewDataSource {
     
-    var gists: [Gist] = []
+    var items: [GistListItemViewModel] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gists.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.reuseCell(GistListItemCell.self, for: indexPath)
-        let gist = gists[indexPath.row]
-        cell.viewModel = GistListItemViewModel(gist: gist)
+        cell.viewModel = items[indexPath.row]
         return cell
     }
     

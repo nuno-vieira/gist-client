@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct File {
+struct File: Equatable {
     var name: String
     var rawUrl: URL
 }
