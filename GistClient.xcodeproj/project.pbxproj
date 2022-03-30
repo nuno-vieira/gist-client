@@ -55,6 +55,7 @@
 		AD8D26EF27F29D6C0093D2D9 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D26EE27F29D6C0093D2D9 /* AppNavigator.swift */; };
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
+		ADCBB57C27F504AE0054DB9B /* UIColor+light+dark.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
 		ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */; };
 		ADF0278527F137E400723A36 /* GistListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0278427F137E400723A36 /* GistListItemViewModel.swift */; };
@@ -121,6 +122,7 @@
 		AD8D26EA27F27CD50093D2D9 /* GistListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListRoute.swift; sourceTree = "<group>"; };
 		AD8D26EC27F281450093D2D9 /* GistListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListViewModelTests.swift; sourceTree = "<group>"; };
 		AD8D26EE27F29D6C0093D2D9 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+light+dark.swift"; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		ADF0278427F137E400723A36 /* GistListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListItemViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				2362A42021A393BB00B6C383 /* UIColor+hex.swift */,
+				ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */,
 				ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */,
 				AD7B51D827EF7BAD0068CBD1 /* UITableView+registerCell.swift */,
 				AD7B51DA27EF7BD40068CBD1 /* UITableView+reuseCell.swift */,
@@ -643,6 +646,7 @@
 				2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */,
 				AD3E752B27E9517100B6D383 /* UserEntity.swift in Sources */,
 				AD8D26E727F2652D0093D2D9 /* GistListViewModel.swift in Sources */,
+				ADCBB57C27F504AE0054DB9B /* UIColor+light+dark.swift in Sources */,
 				AD8D26EB27F27CD50093D2D9 /* GistListRoute.swift in Sources */,
 				AD7B51D727EF7B8C0068CBD1 /* ReuseIdentifiable.swift in Sources */,
 				AD17CDF527E412BE00E0D092 /* AppTheme+Font.swift in Sources */,

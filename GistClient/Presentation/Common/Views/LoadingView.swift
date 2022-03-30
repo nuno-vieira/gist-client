@@ -16,7 +16,7 @@ class LoadingView: UIView {
 
         translatesAutoresizingMaskIntoConstraints = false
 
-        backgroundColor = AppTheme.Color.contentBackgroundColor
+        backgroundColor = AppTheme.Color.contentBackground
         addSubview(activityIndicatorView)
 
         NSLayoutConstraint.activate([
