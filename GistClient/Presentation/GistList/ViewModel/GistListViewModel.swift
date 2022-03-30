@@ -17,6 +17,7 @@ protocol GistListViewModel: AnyObject {
     // Inputs
     func viewDidLoad()
     func selectGist(at index: Int)
+    func retry()
 }
 
 final class DefaultGistListViewModel: GistListViewModel {
@@ -34,6 +35,20 @@ final class DefaultGistListViewModel: GistListViewModel {
 
     // Inputs
     func viewDidLoad() {
+        fetchGists()
+    }
+
+    func selectGist(at index: Int) {
+        let gist = gists[index]
+        route.value = .detail(gist: gist)
+    }
+
+    func retry() {
+        fetchGists()
+    }
+
+    private func fetchGists() {
+        state.value = .loading
         getGistsUseCase.execute { [weak self] (result) in
             switch result {
             case .success(let gists):
@@ -44,11 +59,6 @@ final class DefaultGistListViewModel: GistListViewModel {
                 self?.state.value = .error(message: error.localizedDescription)
             }
         }
-    }
-
-    func selectGist(at index: Int) {
-        let gist = gists[index]
-        route.value = .detail(gist: gist)
     }
 }
 

@@ -27,10 +27,14 @@ class GistListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = viewModel.title
+
         gistListView.configure(dataSource: dataSource)
         gistListView.configure(delegate: self)
+        gistListView.onErrorRetry = { [weak self] in
+            self?.viewModel.retry()
+        }
 
-        title = viewModel.title
         viewModel.viewDidLoad()
 
         viewModel.state.observe(self) { [weak self] state in
@@ -49,8 +53,8 @@ class GistListViewController: UIViewController {
             dataSource.items = items
             gistListView.hideLoading()
             gistListView.reloadData()
-        case .error(let message):
-            gistListView.showError(message: message)
+        case .error:
+            gistListView.showError()
         }
     }
 
