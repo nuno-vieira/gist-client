@@ -77,5 +77,10 @@ class GistListViewModelTests: XCTestCase {
         viewModel.selectGist(at: 1)
         XCTAssertEqual(viewModel.route.value, .detail(gist: gists[1]))
     }
+
+    func test_retry_thenRefetchGists() {
+        viewModel.retry()
+        XCTAssertEqual(mockUseCase.executeCallCount, 1)
+    }
     
 }

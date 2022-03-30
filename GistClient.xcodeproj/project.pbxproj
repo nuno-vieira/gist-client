@@ -10,7 +10,6 @@
 		23249CCF219CE0620088DBA7 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */; };
 		23249CDD219CEBBA0088DBA7 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CDC219CEBBA0088DBA7 /* Gist.swift */; };
 		23249CE1219CF9BB0088DBA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249CE0219CF9BB0088DBA7 /* User.swift */; };
-		2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */; };
 		2362A41221A1DE4F00B6C383 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41121A1DE4F00B6C383 /* File.swift */; };
 		2362A41821A3737300B6C383 /* GistListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41721A3737300B6C383 /* GistListNavigator.swift */; };
 		2362A41A21A375D900B6C383 /* GistListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362A41921A375D900B6C383 /* GistListViewController+UITableViewDelegate.swift */; };
@@ -56,6 +55,7 @@
 		AD982F6927E001B900B5CB3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F6827E001B900B5CB3A /* Kingfisher */; };
 		AD982F7227E002F700B5CB3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD982F7127E002F700B5CB3A /* RealmSwift */; };
 		ADCBB57C27F504AE0054DB9B /* UIColor+light+dark.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */; };
+		ADCBB57E27F50BD60054DB9B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57D27F50BD60054DB9B /* ErrorView.swift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
 		ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */; };
 		ADF0278527F137E400723A36 /* GistListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0278427F137E400723A36 /* GistListItemViewModel.swift */; };
@@ -75,7 +75,6 @@
 		23249CCE219CE0620088DBA7 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
 		23249CDC219CEBBA0088DBA7 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		23249CE0219CF9BB0088DBA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessageView.swift; sourceTree = "<group>"; };
 		2362A41121A1DE4F00B6C383 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		2362A41721A3737300B6C383 /* GistListNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListNavigator.swift; sourceTree = "<group>"; };
 		2362A41921A375D900B6C383 /* GistListViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistListViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		AD8D26EC27F281450093D2D9 /* GistListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListViewModelTests.swift; sourceTree = "<group>"; };
 		AD8D26EE27F29D6C0093D2D9 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+light+dark.swift"; sourceTree = "<group>"; };
+		ADCBB57D27F50BD60054DB9B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		ADF0278427F137E400723A36 /* GistListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListItemViewModel.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2362A41E21A381AD00B6C383 /* LoadingView.swift */,
-				2355C5C621A4C7F000DB0E72 /* NotificationMessageView.swift */,
+				ADCBB57D27F50BD60054DB9B /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,7 +633,6 @@
 				AD56BFBF27EA972E00CECECB /* FileDTO.swift in Sources */,
 				AD8D26E927F266250093D2D9 /* Observable.swift in Sources */,
 				ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */,
-				2355C5C721A4C7F000DB0E72 /* NotificationMessageView.swift in Sources */,
 				AD3E753D27E9654C00B6D383 /* NetworkService.swift in Sources */,
 				23D5C066219F51D300574650 /* GistListItemCell.swift in Sources */,
 				AD3E750E27E9191800B6D383 /* GetGistsUseCase.swift in Sources */,
@@ -665,6 +664,7 @@
 				23249CE1219CF9BB0088DBA7 /* User.swift in Sources */,
 				AD3E752927E9516600B6D383 /* GistEntity.swift in Sources */,
 				ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */,
+				ADCBB57E27F50BD60054DB9B /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
