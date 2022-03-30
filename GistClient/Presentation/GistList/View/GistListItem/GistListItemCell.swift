@@ -28,7 +28,7 @@ class GistListItemCell: UITableViewCell, ReuseIdentifiable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppTheme.Font.subheadline
-        label.textColor = AppTheme.Color.textColor
+        label.textColor = AppTheme.Color.text
         return label
     }()
 
@@ -36,7 +36,7 @@ class GistListItemCell: UITableViewCell, ReuseIdentifiable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppTheme.Font.footnote
-        label.textColor = AppTheme.Color.textColor
+        label.textColor = AppTheme.Color.text
         return label
     }()
 
@@ -53,7 +53,7 @@ class GistListItemCell: UITableViewCell, ReuseIdentifiable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppTheme.Font.footnote
-        label.textColor = AppTheme.Color.textColor
+        label.textColor = AppTheme.Color.text
         label.numberOfLines = 1
         label.textAlignment = .right
         return label
@@ -67,7 +67,7 @@ class GistListItemCell: UITableViewCell, ReuseIdentifiable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
-        backgroundColor = AppTheme.Color.contentBackgroundColor
+        backgroundColor = AppTheme.Color.contentBackground
         
         addSubview(ownerImageView)
         addSubview(ownerNameLabel)

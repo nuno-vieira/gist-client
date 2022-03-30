@@ -4,32 +4,25 @@ import UIKit
 
 extension AppTheme {
     enum Color {
-        static let navTitleColor = UIColor.label
-        static let borderColor = UIColor(hex: 0xd1d5da)
-        static let successColor = UIColor.green
-        static let warningColor = UIColor.yellow
-        static let errorColor = UIColor(hex: 0xcb2431)
-        static let textColor = UIColor(hex: 0x768390)
+        static let buttonTitle = UIColor(
+            light: UIColor(hex: 0x252a2f),
+            dark: UIColor(hex: 0xabb9c6)
+        )
+        static let buttonBackground = UIColor(
+            light: UIColor(hex: 0xdddedf),
+            dark: UIColor(hex: 0x373e47)
+        )
+        static let navTitle = UIColor.label
+        static let border = UIColor(hex: 0xd1d5da)
+        static let text = UIColor(hex: 0x768390)
         static let boldText = UIColor.label
-        static let navBarColor = UIColor { traitCollection in
-            switch traitCollection.userInterfaceStyle {
-            case .light:
-                return UIColor(hex: 0xf8f8fa)
-            case .dark:
-                return UIColor(hex: 0x2d333b)
-            default:
-                return UIColor(hex: 0xf8f8fa)
-            }
-        }
-        static let contentBackgroundColor = UIColor { traitCollection in
-            switch traitCollection.userInterfaceStyle {
-            case .light:
-                return UIColor(hex: 0xf6f8fa)
-            case .dark:
-                return UIColor(hex: 0x22272e)
-            default:
-                return UIColor(hex: 0xf6f8fa)
-            }
-        }
+        static let navBar = UIColor(
+            light: UIColor(hex: 0xf8f8fa),
+            dark: UIColor(hex: 0x2d333b)
+        )
+        static let contentBackground = UIColor(
+            light: UIColor(hex: 0xf6f8fa),
+            dark: UIColor(hex: 0x22272e)
+        )
     }
 }
