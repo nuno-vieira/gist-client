@@ -2,12 +2,55 @@
 
 import Foundation
 
-struct GistDetailViewModel {
-    let gistHtmlUrl: URL
-    let title: String
+enum GistDetailState: Equatable {
+    case loadGistHtml(request: URLRequest)
+    case gistHtmlLoaded
+    case gistHtmlFailed
+}
+
+protocol GistDetailViewModel {
+    // Outputs
+    var state: Observable<GistDetailState?> { get }
+    var title: String { get }
+
+    // Inputs
+    func viewDidLoad()
+    func retry()
+    func htmlDidFail()
+    func htmlDidLoad()
+}
+
+class DefaultGistDetailViewModel: GistDetailViewModel {
+    let gist: Gist
 
     init(gist: Gist) {
-        gistHtmlUrl = gist.htmlUrl
-        title = gist.files.first?.name ?? ""
+        self.gist = gist
+    }
+
+    var title: String {
+        gist.files.first?.name ?? ""
+    }
+
+    var state: Observable<GistDetailState?> = .init(nil)
+
+    func viewDidLoad() {
+        loadGistHtml()
+    }
+
+    func retry() {
+        loadGistHtml()
+    }
+
+    func htmlDidFail() {
+        state.value = .gistHtmlFailed
+    }
+
+    func htmlDidLoad() {
+        state.value = .gistHtmlLoaded
+    }
+
+    private func loadGistHtml() {
+        let urlRequest = URLRequest(url: gist.htmlUrl)
+        state.value = .loadGistHtml(request: urlRequest)
     }
 }

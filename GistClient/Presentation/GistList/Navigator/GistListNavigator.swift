@@ -16,7 +16,7 @@ class DefaultGistListNavigator: GistListNavigator {
     func navigate(to route: GistListRoute) {
         switch route {
         case let .detail(gist):
-            let viewModel = GistDetailViewModel(gist: gist)
+            let viewModel = DefaultGistDetailViewModel(gist: gist)
             let detailVC = GistDetailViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(detailVC, animated: true)
         }

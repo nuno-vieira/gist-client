@@ -1,14 +1,9 @@
 //  Copyright © 2022 nuno-vieira. All rights reserved.
 
 import UIKit
-import WebKit
 
-class GistDetailViewController: UIViewController, WKNavigationDelegate {
-    var webView: WKWebView!
-    var loadingView: LoadingView = LoadingView(frame: .zero)
-    
+class GistDetailViewController: UIViewController {
     let viewModel: GistDetailViewModel
-    
     init(viewModel: GistDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -17,45 +12,48 @@ class GistDetailViewController: UIViewController, WKNavigationDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    lazy var gistDetailView = GistDetailView()
     
     override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
-        webView.backgroundColor = AppTheme.Color.contentBackground
-        webView.isOpaque = false
-        view = webView
+        view = gistDetailView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         title = viewModel.title
 
-        view.addSubview(loadingView)
-
-        NSLayoutConstraint.activate([
-            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            loadingView.topAnchor.constraint(equalTo: view.topAnchor),
-            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
-        let request = URLRequest(url: viewModel.gistHtmlUrl)
-        webView.load(request)
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Remove the headers from the web page.
-        webView.evaluateJavaScript("""
-            document.querySelector('.js-header-wrapper').remove();
-            document.querySelector('.gist-detail-intro').remove();
-        """, completionHandler: { _, _ in
-            // The delay is to make sure the js has finished evaluate.
-            // This is to avoid a minor UI flicker.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.loadingView.isHidden = true
+        viewModel.viewDidLoad()
+        viewModel.state.observe(self) { [weak self] state in
+            switch state {
+            case .loadGistHtml(let request):
+                self?.gistDetailView.showLoading()
+                self?.gistDetailView.loadHtml(request)
+            case .gistHtmlLoaded:
+                self?.gistDetailView.showWebView()
+            case .gistHtmlFailed:
+                self?.gistDetailView.showError()
+            case .none:
+                break
             }
-        })
+        }
+
+        gistDetailView.onErrorRetry = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.retry()
+        }
+        gistDetailView.onHtmlError = { [weak self] _ in
+            self?.viewModel.htmlDidFail()
+        }
+        gistDetailView.onHtmlLoad = { [weak self] in
+            self?.viewModel.htmlDidLoad()
+        }
+
+    }
+
+    deinit {
+        viewModel.state.remove(observer: self)
     }
 
 }

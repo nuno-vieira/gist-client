@@ -18,7 +18,7 @@ class GistListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let gistListView = GistListView(frame: .zero)
+    lazy var gistListView = GistListView()
 
     override func loadView() {
         view = gistListView
@@ -36,7 +36,6 @@ class GistListViewController: UIViewController {
         }
 
         viewModel.viewDidLoad()
-
         viewModel.state.observe(self) { [weak self] state in
             self?.onStateChanged(state)
         }
