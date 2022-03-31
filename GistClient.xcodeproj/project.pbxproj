@@ -57,6 +57,12 @@
 		ADCBB57C27F504AE0054DB9B /* UIColor+light+dark.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */; };
 		ADCBB57E27F50BD60054DB9B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57D27F50BD60054DB9B /* ErrorView.swift */; };
 		ADCBB58027F52B570054DB9B /* GistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB57F27F52B570054DB9B /* GistDetailView.swift */; };
+		ADCBB59227F538DE0054DB9B /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59127F538DE0054DB9B /* Page.swift */; };
+		ADCBB59427F538FD0054DB9B /* XCTest+Gherkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59327F538FD0054DB9B /* XCTest+Gherkin.swift */; };
+		ADCBB59627F5391D0054DB9B /* XCUIElement+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59527F5391D0054DB9B /* XCUIElement+Helpers.swift */; };
+		ADCBB59B27F539CB0054DB9B /* GistSceneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59A27F539CB0054DB9B /* GistSceneUITests.swift */; };
+		ADCBB59D27F539EE0054DB9B /* GistListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59C27F539EE0054DB9B /* GistListPage.swift */; };
+		ADCBB59F27F539F60054DB9B /* GistDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCBB59E27F539F60054DB9B /* GistDetailPage.swift */; };
 		ADDF77DF27E2A6C1009CEA46 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */; };
 		ADDF77E727E2C4C0009CEA46 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */; };
 		ADF0278527F137E400723A36 /* GistListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0278427F137E400723A36 /* GistListItemViewModel.swift */; };
@@ -64,6 +70,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		AD3E751927E91C4600B6D383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23ADDDF9219B89E90012635A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23ADDE00219B89E90012635A;
+			remoteInfo = GistClient;
+		};
+		ADCBB58B27F5385B0054DB9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 23ADDDF9219B89E90012635A /* Project object */;
 			proxyType = 1;
@@ -125,6 +138,13 @@
 		ADCBB57B27F504AE0054DB9B /* UIColor+light+dark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+light+dark.swift"; sourceTree = "<group>"; };
 		ADCBB57D27F50BD60054DB9B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		ADCBB57F27F52B570054DB9B /* GistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailView.swift; sourceTree = "<group>"; };
+		ADCBB58527F5385B0054DB9B /* GistClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCBB59127F538DE0054DB9B /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		ADCBB59327F538FD0054DB9B /* XCTest+Gherkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Gherkin.swift"; sourceTree = "<group>"; };
+		ADCBB59527F5391D0054DB9B /* XCUIElement+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Helpers.swift"; sourceTree = "<group>"; };
+		ADCBB59A27F539CB0054DB9B /* GistSceneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistSceneUITests.swift; sourceTree = "<group>"; };
+		ADCBB59C27F539EE0054DB9B /* GistListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListPage.swift; sourceTree = "<group>"; };
+		ADCBB59E27F539F60054DB9B /* GistDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPage.swift; sourceTree = "<group>"; };
 		ADDF77DE27E2A6C1009CEA46 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
 		ADDF77E627E2C4C0009CEA46 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		ADF0278427F137E400723A36 /* GistListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListItemViewModel.swift; sourceTree = "<group>"; };
@@ -141,6 +161,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD3E751227E91C4600B6D383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCBB58227F5385B0054DB9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,6 +222,7 @@
 			children = (
 				23ADDE03219B89E90012635A /* GistClient */,
 				AD3E751627E91C4600B6D383 /* GistClientTests */,
+				ADCBB58627F5385B0054DB9B /* GistClientUITests */,
 				23ADDE02219B89E90012635A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -204,6 +232,7 @@
 			children = (
 				23ADDE01219B89E90012635A /* GistClient.app */,
 				AD3E751527E91C4600B6D383 /* GistClientTests.xctest */,
+				ADCBB58527F5385B0054DB9B /* GistClientUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,6 +399,51 @@
 				AD8D26E327F25DF60093D2D9 /* GistListItemViewModelTests.swift */,
 			);
 			path = GistList;
+			sourceTree = "<group>";
+		};
+		ADCBB58627F5385B0054DB9B /* GistClientUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADCBB59727F5395B0054DB9B /* Presentation */,
+				ADCBB59027F538D20054DB9B /* Common */,
+			);
+			path = GistClientUITests;
+			sourceTree = "<group>";
+		};
+		ADCBB59027F538D20054DB9B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ADCBB59127F538DE0054DB9B /* Page.swift */,
+				ADCBB59327F538FD0054DB9B /* XCTest+Gherkin.swift */,
+				ADCBB59527F5391D0054DB9B /* XCUIElement+Helpers.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ADCBB59727F5395B0054DB9B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				ADCBB59827F539630054DB9B /* GistScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ADCBB59827F539630054DB9B /* GistScene */ = {
+			isa = PBXGroup;
+			children = (
+				ADCBB59927F539B20054DB9B /* Pages */,
+				ADCBB59A27F539CB0054DB9B /* GistSceneUITests.swift */,
+			);
+			path = GistScene;
+			sourceTree = "<group>";
+		};
+		ADCBB59927F539B20054DB9B /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				ADCBB59C27F539EE0054DB9B /* GistListPage.swift */,
+				ADCBB59E27F539F60054DB9B /* GistDetailPage.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		ADDF77E027E2B2BD009CEA46 /* Resources */ = {
@@ -557,6 +631,24 @@
 			productReference = AD3E751527E91C4600B6D383 /* GistClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ADCBB58427F5385B0054DB9B /* GistClientUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADCBB58D27F5385C0054DB9B /* Build configuration list for PBXNativeTarget "GistClientUITests" */;
+			buildPhases = (
+				ADCBB58127F5385B0054DB9B /* Sources */,
+				ADCBB58227F5385B0054DB9B /* Frameworks */,
+				ADCBB58327F5385B0054DB9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADCBB58C27F5385B0054DB9B /* PBXTargetDependency */,
+			);
+			name = GistClientUITests;
+			productName = GistClientUITests;
+			productReference = ADCBB58527F5385B0054DB9B /* GistClientUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -574,6 +666,10 @@
 					AD3E751427E91C4600B6D383 = {
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1320;
+						TestTargetID = 23ADDE00219B89E90012635A;
+					};
+					ADCBB58427F5385B0054DB9B = {
+						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 23ADDE00219B89E90012635A;
 					};
 				};
@@ -597,6 +693,7 @@
 			targets = (
 				23ADDE00219B89E90012635A /* GistClient */,
 				AD3E751427E91C4600B6D383 /* GistClientTests */,
+				ADCBB58427F5385B0054DB9B /* GistClientUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -611,6 +708,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD3E751327E91C4600B6D383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCBB58327F5385B0054DB9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -684,6 +788,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADCBB58127F5385B0054DB9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADCBB59F27F539F60054DB9B /* GistDetailPage.swift in Sources */,
+				ADCBB59427F538FD0054DB9B /* XCTest+Gherkin.swift in Sources */,
+				ADCBB59D27F539EE0054DB9B /* GistListPage.swift in Sources */,
+				ADCBB59627F5391D0054DB9B /* XCUIElement+Helpers.swift in Sources */,
+				ADCBB59227F538DE0054DB9B /* Page.swift in Sources */,
+				ADCBB59B27F539CB0054DB9B /* GistSceneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -691,6 +808,11 @@
 			isa = PBXTargetDependency;
 			target = 23ADDE00219B89E90012635A /* GistClient */;
 			targetProxy = AD3E751927E91C4600B6D383 /* PBXContainerItemProxy */;
+		};
+		ADCBB58C27F5385B0054DB9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23ADDE00219B89E90012635A /* GistClient */;
+			targetProxy = ADCBB58B27F5385B0054DB9B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -914,6 +1036,47 @@
 			};
 			name = Release;
 		};
+		ADCBB58E27F5385C0054DB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTPG3599NE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunovieira.GistClientUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GistClient;
+			};
+			name = Debug;
+		};
+		ADCBB58F27F5385C0054DB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTPG3599NE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunovieira.GistClientUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GistClient;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -940,6 +1103,15 @@
 			buildConfigurations = (
 				AD3E751C27E91C4600B6D383 /* Debug */,
 				AD3E751D27E91C4600B6D383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADCBB58D27F5385C0054DB9B /* Build configuration list for PBXNativeTarget "GistClientUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCBB58E27F5385C0054DB9B /* Debug */,
+				ADCBB58F27F5385C0054DB9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
